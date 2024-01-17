@@ -28,10 +28,8 @@ function App() {
     return (
         <>
             <form onSubmit={echoHandler}>
-                <input type="text" required onInput={(e: FormEvent<HTMLElement>) => {
-                    console.log("the vent is",);
-                    setInputValue(e.target?.value || '')
-                }}/>
+                <input type="text" required
+                       onInput={(e: FormEvent<HTMLInputElement>) => setInputValue((e.target as HTMLInputElement)?.value || '')}/>
                 <button>Echo</button>
             </form>
         </>
